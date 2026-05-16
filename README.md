@@ -40,7 +40,7 @@ python client.py
 ```text
 osint-diploma/
 ├── main.py                 # Точка входу FastAPI (API Gateway)
-├── gui.py                  # GUI для зручної взаємодії з API
+├── сlient.py                  # GUI для зручної взаємодії з API
 ├── core/
 │   ├── config.py           # Налаштування середовища
 │   ├── database.py         # Підключення до PostgreSQL
