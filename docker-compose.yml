@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # 1. Реляційна база даних (PostgreSQL)
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: osint_user
+      POSTGRES_PASSWORD: secure_password
+      POSTGRES_DB: osint_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    security_opt:
+      - apparmor:unconfined    # <--- ДОДАНО ЦЕЙ РЯДОК
+
+  # 2. In-Memory брокер (Redis)
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    security_opt:
+      - apparmor:unconfined    # <--- ДОДАНО ЦЕЙ РЯДОК
+
+volumes:
+  pgdata:
