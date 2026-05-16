@@ -35,7 +35,7 @@ pip install PyQt6 requests
 python client.py
 ```
 
-## Структура проекту
+## Структура проєкту
 
 ```text
 osint-diploma/
